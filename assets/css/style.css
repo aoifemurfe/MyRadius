@@ -28,7 +28,7 @@
   /*--------------------------------------------map*/
  @media only screen and (min-width: 768px) {
   /* For desktop: */
-  .map {max-width: 75%;
+  #map {max-width: 75%;
   max-height: 75%;
   
   }
@@ -36,7 +36,7 @@
   
  @media only screen and (max-width: 768px) {
   /* For mobile phones: */
- .map {min-width: 75%;}
+ #map {min-width: 75%;}
  }
 
 
