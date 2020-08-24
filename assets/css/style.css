@@ -26,20 +26,16 @@
 
 
   /*--------------------------------------------map*/
- @media only screen and (min-width: 768px) {
-  /* For desktop: */
-  #map {max-width: 75%;
-  max-height: 75%;
-  
+ #map {
+    height: 100%;
+    margin: 10%;
   }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
   }
-  
- @media only screen and (max-width: 768px) {
-  /* For mobile phones: */
- #map {min-width: 75%;}
- }
-
-
 /*--------------------------------------------Footer*/
 
 .footer {
