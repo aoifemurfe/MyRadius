@@ -33,7 +33,31 @@
 	<!-- body-->
 
 <div class="banner container">
-<input id="autocomplete" type="text"></input>
+    <div class="row">
+        <div class="col-sm">
+            <h3>Find me:</h3>
+                   
+        </div>
+        <div class="col-sm">
+            <h3>Within:</h3>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options" id="5000" autocomplete="off" checked> 5km
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="10000" autocomplete="off"> 10km
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="15000" autocomplete="off"> 15km
+                    </label>
+</div>
+    </div>
+    <div class="col-sm">
+      <h3>Near</h3>
+       <input id="autocomplete" type="text"></input>
+    </div>
+  </div>
+
 </div>
 <div id="map"></div>
 
