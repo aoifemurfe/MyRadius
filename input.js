@@ -1,17 +1,17 @@
 let map;
 let autocomplete;
-let myLatlng = autocomplete;
+let myLatlng;
 
 function initMap() {
-  var map = new google.maps.Map(document.getElementById("map"), {
+  map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 47.782, lng: -31.727 },
     zoom: 4
   });
-  var  autocomplete = new google.maps.places.Autocomplete(
+  autocomplete = new google.maps.places.Autocomplete(
       document.getElementById("autocomplete"),
     { types: ['establishment'],
         componentRestrictions: {'country': ['IE']},
-        fields: ['placeid','geometry','name']
+        fields: ['place_id','geometry','name']
 });
 
   places = new google.maps.places.PlacesService(map);
@@ -19,16 +19,29 @@ function initMap() {
 }
 
 function onPlaceChanged() {
+   
   const place = autocomplete.getPlace();
+  
     var marker = new google.maps.Marker({
-    position: myLatlng,
+    position: place.geometry.location,
     map: map
   });
+  const cityCircle = new google.maps.Circle({
+      strokeColor: "#FF0000",
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: "#FF0000",
+      fillOpacity: 0.35,
+      map,
+      center: place.geometry.location,
+      radius: 5000
+    });
 
   if (place.geometry) {
+    marker.setMap(map);
     map.panTo(place.geometry.location);
-    map.setZoom(15);
-    search();
+    map.setZoom(12);
+        //search();
   } else {
     document.getElementById("autocomplete").placeholder = "Enter a city";
   }
