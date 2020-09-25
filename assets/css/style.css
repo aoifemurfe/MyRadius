@@ -1,21 +1,15 @@
  /*--------------------------------------------Nav Bar*/
-.nav-bar {
-   display: block;
-  margin-left: auto;
-  margin-right: auto;
-    
 
-}
  
  
  
  /*--------------------------------------------banner*/
 
  .banner {
-    border-top-style: solid;
+    margin-top: 2rem;
     border-bottom-style: solid;
-    padding: 2rem;
-    margin: 5rem;
+    border-top-style: solid;
+    padding: 1rem;
 
 
 }

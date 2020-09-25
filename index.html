@@ -5,11 +5,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-		type="text/css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-		type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/input.js"></script>
@@ -36,24 +34,39 @@
     <div class="row">
         <div class="col-sm">
             <h3>Find me:</h3>
-                   
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+            <label class="form-check-label" for="inlineCheckbox1">Groceries</label>
         </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Pharmacies">
+            <label class="form-check-label" for="inlineCheckbox2">Pharmacies</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Doctors">
+            <label class="form-check-label" for="inlineCheckbox3">Doctors</label>
+        </div>   
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Hospitals">
+            <label class="form-check-label" for="inlineCheckbox3">Hospitals</label>
+        </div>         
+    </div>
         <div class="col-sm">
             <h3>Within:</h3>
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-secondary active">
-                        <input type="radio" name="options" id="5000" autocomplete="off" checked> 5km
+                        <input type="radio" name="options" id="5000" autocomplete="off" onclick= toggle5000() checked> 5km
                     </label>
                     <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="10000" autocomplete="off"> 10km
+                        <input type="radio" name="options" id="10000" autocomplete="off" onclick= toggle10000()> 10km
                     </label>
                     <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="15000" autocomplete="off"> 15km
+                        <input type="radio" name="options" id="15000" autocomplete="off" onclick= toggle15000()> 15km
                     </label>
 </div>
     </div>
     <div class="col-sm">
-      <h3>Near</h3>
+      <h3>Centered Around:</h3>
        <input id="autocomplete" type="text"></input>
     </div>
   </div>
@@ -64,6 +77,10 @@
 <div class="banner container">
 	
 </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 </body>
 
