@@ -34,44 +34,49 @@
     <div class="row">
         <div class="col-sm">
             <h3>Find me:</h3>
-            <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-            <label class="form-check-label" for="inlineCheckbox1">Groceries</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Pharmacies">
-            <label class="form-check-label" for="inlineCheckbox2">Pharmacies</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Doctors">
-            <label class="form-check-label" for="inlineCheckbox3">Doctors</label>
-        </div>   
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Hospitals">
-            <label class="form-check-label" for="inlineCheckbox3">Hospitals</label>
-        </div>         
-    </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Groceries</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Pharmacies">
+                    <label class="form-check-label" for="inlineCheckbox2">Pharmacies</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Doctors">
+                    <label class="form-check-label" for="inlineCheckbox3">Doctors</label>
+                </div>   
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Hospitals">
+                    <label class="form-check-label" for="inlineCheckbox3">Hospitals</label>
+                </div>         
+            </div>
+            <div class="col-sm">
+                <h3>Within:</h3>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary active">
+                            <input type="radio" name="options" id="5000" autocomplete="off" checked> 5km
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="10000" autocomplete="off"> 10km
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="15000" autocomplete="off"> 15km
+                        </label>
+                    </div>
+            </div>
         <div class="col-sm">
-            <h3>Within:</h3>
-                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary active">
-                        <input type="radio" name="options" id="5000" autocomplete="off" onclick= toggle5000() checked> 5km
-                    </label>
-                    <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="10000" autocomplete="off" onclick= toggle10000()> 10km
-                    </label>
-                    <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="15000" autocomplete="off" onclick= toggle15000()> 15km
-                    </label>
+            <h3>Centered Around:</h3>
+            <input id="autocomplete" type="text"></input>
+        </div>
+    </div>
 </div>
-    </div>
-    <div class="col-sm">
-      <h3>Centered Around:</h3>
-       <input id="autocomplete" type="text"></input>
-    </div>
-  </div>
 
+<div class="search container">
+
+<button type="button" class="btn btn-outline-secondary btn-lg btn-block">Search!</button>
 </div>
+
 <div id="map"></div>
 
 <div class="banner container">

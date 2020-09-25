@@ -10,7 +10,7 @@ function initMap() {
   autocomplete = new google.maps.places.Autocomplete(
       document.getElementById("autocomplete"),
     { 
-        componentRestrictions: {'country': ['IE']},
+    
         fields: ['place_id','geometry','name']
 });
 
@@ -46,3 +46,4 @@ function onPlaceChanged() {
     document.getElementById("autocomplete").placeholder = "Enter a city";
   }
 }
+
