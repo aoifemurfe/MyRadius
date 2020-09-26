@@ -4,7 +4,7 @@ let infoWindow;
 let markers = [];
 let newradius = 5000;
 let searchfor = [];
-
+let zoomlevel = 12;
 
 
 function initMap() {
@@ -15,24 +15,27 @@ function initMap() {
   autocomplete = new google.maps.places.Autocomplete(
       document.getElementById("autocomplete"),
     { 
-    
         fields: ['place_id','geometry','name']
 });
 
   places = new google.maps.places.PlacesService(map);
-  autocomplete.addListener("place_changed", onPlaceChanged);
-}
+  SearchButton.addListener("click", onSearch());
+ 
+};
 
-function onPlaceChanged() {
-    
+
+
+
+function onSearch() {
    
   const place = autocomplete.getPlace();
   
-    var marker = new google.maps.Marker({
+    marker = new google.maps.Marker({
     position: place.geometry.location,
     map: map
+   
   });
-  const cityCircle = new google.maps.Circle({
+    cityCircle = new google.maps.Circle({
       strokeColor: "#F03939",
       strokeOpacity: 0.8,
       strokeWeight: 2,
@@ -46,26 +49,32 @@ function onPlaceChanged() {
   if (place.geometry) {
     marker.setMap(map);
     map.panTo(place.geometry.location);
-    map.setZoom(12);
+    map.setZoom(zoomlevel);
         //search();
   } else {
-    document.getElementById("autocomplete").placeholder = "Enter a city";
+    document.getElementById("autocomplete").placeholder = "Enter a location";
   }
+
 };
+
+
 
 function updateradius1() {
 
-    newradius = document.getElementById("fivek").value;
+    newradius = Number(document.getElementById("fivek").value);
+    zoomlevel = Number(12);
       console.log(newradius);
 };
 function updateradius2() {
 
-      newradius = document.getElementById("tenk").value;
+      newradius = Number(document.getElementById("tenk").value);
+      zoomlevel = Number(11);
       console.log(newradius);
 };
 
 function updateradius3() {
-      newradius = document.getElementById("fifteenk").value;
+      newradius = Number(document.getElementById("fifteenk").value);
+      zoomlevel = Number(10);
       console.log(newradius);
 };
 
