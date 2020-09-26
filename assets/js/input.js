@@ -1,6 +1,11 @@
 let map;
 let autocomplete;
-let myLatlng;
+let infoWindow;
+let markers = [];
+let newradius = 5000;
+let searchfor = [];
+
+
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -19,6 +24,7 @@ function initMap() {
 }
 
 function onPlaceChanged() {
+    
    
   const place = autocomplete.getPlace();
   
@@ -34,7 +40,7 @@ function onPlaceChanged() {
       fillOpacity: 0.35,
       map,
       center: place.geometry.location,
-      radius: 5000
+      radius: newradius
     });
 
   if (place.geometry) {
@@ -45,5 +51,28 @@ function onPlaceChanged() {
   } else {
     document.getElementById("autocomplete").placeholder = "Enter a city";
   }
-}
+};
 
+function updateradius1() {
+
+    newradius = document.getElementById("fivek").value;
+      console.log(newradius);
+};
+function updateradius2() {
+
+      newradius = document.getElementById("tenk").value;
+      console.log(newradius);
+};
+
+function updateradius3() {
+      newradius = document.getElementById("fifteenk").value;
+      console.log(newradius);
+};
+
+function updatesearch1() {
+    searchitem1 = document.getElementById("inlineCheckbox1").value;
+    searchfor.push(searchitem1);
+      console.log(searchfor);
+};
+
+ console.log(document.querySelectorAll('input[type=checkbox]:checked'))
