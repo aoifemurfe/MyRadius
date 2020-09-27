@@ -17,7 +17,7 @@
 
 </head>
 
-<body>
+<body onLoad="geolocate()">
 
 <!-- Navigation -->
 <nav class="navbar sticky-top navbar-dark bg-dark navbar-light navbar-expand-sm">
@@ -39,15 +39,15 @@
                     <label class="form-check-label" for="inlineCheckbox1">Groceries</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input onclick="updatesearch2()" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Pharmacies">
+                    <input onclick="updatesearch2()" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Pharmacies" checked>
                     <label class="form-check-label" for="inlineCheckbox2">Pharmacies</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input onclick="updatesearch3()" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Doctors">
+                    <input onclick="updatesearch3()" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Doctors" checked>
                     <label class="form-check-label" for="inlineCheckbox3">Doctors</label>
                 </div>   
                 <div class="form-check form-check-inline">
-                    <input onclick="updatesearch4()" class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Hospitals">
+                    <input onclick="updatesearch4()" class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Hospitals" checked>
                     <label class="form-check-label" for="inlineCheckbox3">Hospitals</label>
                 </div>         
             </div>
@@ -79,6 +79,38 @@
 
 <div id="map"></div>
 
+    <div id="listing">
+      <table id="resultsTable">
+        <tbody id="results"></tbody>
+      </table>
+    </div>
+
+    <div style="display: none">
+      <div id="info-content">
+        <table>
+          <tr id="iw-url-row" class="iw_table_row">
+            <td id="iw-icon" class="iw_table_icon"></td>
+            <td id="iw-url"></td>
+          </tr>
+          <tr id="iw-address-row" class="iw_table_row">
+            <td class="iw_attribute_name">Address:</td>
+            <td id="iw-address"></td>
+          </tr>
+          <tr id="iw-phone-row" class="iw_table_row">
+            <td class="iw_attribute_name">Telephone:</td>
+            <td id="iw-phone"></td>
+          </tr>
+          <tr id="iw-rating-row" class="iw_table_row">
+            <td class="iw_attribute_name">Rating:</td>
+            <td id="iw-rating"></td>
+          </tr>
+          <tr id="iw-website-row" class="iw_table_row">
+            <td class="iw_attribute_name">Website:</td>
+            <td id="iw-website"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
