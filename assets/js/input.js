@@ -1,11 +1,11 @@
 let map;
 let autocomplete;
-let infoWindow;
-let markers = [];
+let infowindow;
 let newradius = 5000;
 let searchfor = [];
 let zoomlevel = 12;
-var service;
+let service;
+let marker = [];
 
 
 function initMap() {
@@ -21,7 +21,6 @@ function initMap() {
 
   places = new google.maps.places.PlacesService(map);
   SearchButton.addListener("click", onSearch());
-  infowindow = new google.maps.InfoWindow();
  
 };
 
@@ -29,10 +28,10 @@ function initMap() {
 //// serach button actions///
 function onSearch() {
    
-  const place = autocomplete.getPlace();
+  const cplace = autocomplete.getPlace();
   
     marker = new google.maps.Marker({
-    position: place.geometry.location,
+    position: cplace.geometry.location,
     map: map
    
   });
@@ -43,13 +42,13 @@ function onSearch() {
       fillColor: "#F03939",
       fillOpacity: 0.35,
       map,
-      center: place.geometry.location,
+      center: cplace.geometry.location,
       radius: newradius
     });
 
-  if (place.geometry) {
+  if (cplace.geometry) {
     marker.setMap(map);
-    map.panTo(place.geometry.location);
+    map.panTo(cplace.geometry.location);
     map.setZoom(zoomlevel);
         //search();
   } else {
@@ -58,54 +57,45 @@ function onSearch() {
   }
 
  var request = {
-    location: place.geometry.location,
+    location: cplace.geometry.location,
     radius: newradius,
-    query: ['Hospital']
+    types: ['cafe']
   };
-
+  google.maps.event.addListener(marker, "click", window)
   service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, markers);
+}
 
-function markers(request, status) {
+function markers(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
-      createMarker(results[i]);
+      createMarker(results[i]);}
+        }
     }
-  }
-}}
-
-function createMarker(place) {
+function createMarker(s_place) {
 
     const image = {
-      url: "http://maps.google.com/mapfiles/kml/pal4/icon63.png" ,
+      url: "http://maps.google.com/mapfiles/kml/paddle/blu-stars.png" ,
       size: new google.maps.Size(71, 71),
       origin: new google.maps.Point(0, 0),
       anchor: new google.maps.Point(17, 34),
       scaledSize: new google.maps.Size(25, 25),
     };
-    new google.maps.Marker({
-        position: place.geometry.location,
+    marker = new google.maps.Marker({
+        position: s_place.geometry.location,
         map: map,
         icon: image,
-        title: place.name,
+        title: s_place.name,
         animation: google.maps.Animation.DROP
     });
-    google.maps.event.addListener(markers[i], "click", showInfoWindow);
+
+    function window() {
+        infowindow = new google.maps.InfoWindow();
+        infowindow.setcontent(s_place.name);
+        infoWindow.open(map);
+    };
 }
 
-function showInfoWindow() {
-  const marker = this;
-  places.getDetails(
-    { placeId: marker.placeResult.place_id },
-    (place, status) => {
-      if (status !== google.maps.places.PlacesServiceStatus.OK) {
-        return;
-      }
-      infoWindow.open(map, marker);
-      buildIWContent(place);
-    }
-  );
-}
 
   
 function updateradius1() {
