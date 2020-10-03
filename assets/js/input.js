@@ -7,7 +7,6 @@ let zoomlevel = 12;
 let service;
 let marker = [];
 
-
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 47.782, lng: -31.727 },
@@ -20,6 +19,7 @@ function initMap() {
 });
 
   places = new google.maps.places.PlacesService(map);
+  
   SearchButton.addListener("click", onSearch());
  
 };
@@ -27,7 +27,7 @@ function initMap() {
 
 //// serach button actions///
 function onSearch() {
-   
+    
   const cplace = autocomplete.getPlace();
   
     marker = new google.maps.Marker({
@@ -50,7 +50,7 @@ function onSearch() {
     marker.setMap(map);
     map.panTo(cplace.geometry.location);
     map.setZoom(zoomlevel);
-        //search();
+    
   } else {
     alert("Enter a location");
     //document.getElementById("autocomplete").placeholder = "Enter a location";
@@ -59,14 +59,14 @@ function onSearch() {
  var request = {
     location: cplace.geometry.location,
     radius: newradius,
-    types: ['cafe']
+    types: ['hospital']
   };
-  google.maps.event.addListener(marker, "click", window)
+  
   service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, markers);
-}
+ 
 
-function markers(results, status) {
+function markers (results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       createMarker(results[i]);}
@@ -88,16 +88,19 @@ function createMarker(s_place) {
         title: s_place.name,
         animation: google.maps.Animation.DROP
     });
-
-    function window() {
-        infowindow = new google.maps.InfoWindow();
-        infowindow.setcontent(s_place.name);
-        infoWindow.open(map);
+     marker.addListener("click", window)
+     
+function window () {
+    infowindow.setContent(marker.title);  
+    infowindow.setPosition(marker.position) 
+    infowindow.open(map, marker);
     };
+    
+infowindow = new google.maps.InfoWindow();
+    
+    }
+
 }
-
-
-  
 function updateradius1() {
 
     newradius = Number(document.getElementById("fivek").value);
