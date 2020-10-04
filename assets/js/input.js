@@ -65,7 +65,6 @@ function onSearch() {
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, searchmarkers);
     infowindow = new google.maps.InfoWindow();
-    console.log(markers)
 
     function searchmarkers (results, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -74,7 +73,12 @@ function onSearch() {
             }
         }
     }
+ 
+    searchfor = document.querySelectorAll('input[type=checkbox]:checked');
+    console.log(searchfor);
+
 }
+
 
 function createMarker(s_place) {
 
@@ -107,6 +111,7 @@ function onClear() {
         markers[m].setMap(null);
     }
     markers = [];
+    document.getElementById('autocomplete').value = ''
 }
 
 
@@ -135,7 +140,7 @@ function updatesearch1() {
       console.log(searchfor);
 };
 
-// console.log(document.querySelectorAll('input[type=checkbox]:checked'))
+
 
 // Bias the autocomplete object to the user's geographical location,
 // as supplied by the browser's 'navigator.geolocation' object.
