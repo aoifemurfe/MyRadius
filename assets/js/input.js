@@ -55,15 +55,53 @@ function onSearch() {
         alert("Enter a location");
         //document.getElementById("autocomplete").placeholder = "Enter a location";
     }
+    
+    var searchfor1 = document.querySelectorAll('input[type=checkbox]:checked');
+    Array.from(searchfor1).forEach(function(el) {
+        searchfor.push(el.id)    
+    });
 
-    var request = {
+    console.log(searchfor);
+
+    var request1 = {
         location: cplace.geometry.location,
         radius: newradius,
-        types: ['hospital']
+        types: [searchfor[0]]
     };
-    
+
+        var request2 = {
+        location: cplace.geometry.location,
+        radius: newradius,
+        types: [searchfor[1]]
+    };
+
+        var request3 = {
+        location: cplace.geometry.location,
+        radius: newradius,
+        types: [searchfor[2]]
+    };
+
+        var request4 = {
+        location: cplace.geometry.location,
+        radius: newradius,
+        types: [searchfor[3]]
+    };
+
+    console.log(request1.types);
+    console.log(request2.types);
+    console.log(request3.types);
+    console.log(request4.types);
+
     service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, searchmarkers);
+    if (request1.types !== "undefined") {
+    service.nearbySearch(request1, searchmarkers);};
+
+    if (request2.types !== "undefined") {
+    service.nearbySearch(request2, searchmarkers);};
+    if (request3.types !== "undefined") {
+    service.nearbySearch(request3, searchmarkers);};
+    if (request4.types !== "undefined") {
+    service.nearbySearch(request4, searchmarkers);};
     infowindow = new google.maps.InfoWindow();
 
     function searchmarkers (results, status) {
@@ -74,8 +112,6 @@ function onSearch() {
         }
     }
  
-    searchfor = document.querySelectorAll('input[type=checkbox]:checked');
-    console.log(searchfor);
 
 }
 
@@ -83,8 +119,10 @@ function onSearch() {
 function createMarker(s_place) {
 
    const image = {
-     url: "http://maps.google.com/mapfiles/kml/paddle/blu-stars.png" ,
-     size: new google.maps.Size(70, 80),
+        url: s_place.icon,
+        
+        scaledSize: new google.maps.Size(25, 25),
+     
    };
    smarker = new google.maps.Marker({
        position: s_place.geometry.location,
@@ -112,6 +150,10 @@ function onClear() {
     }
     markers = [];
     document.getElementById('autocomplete').value = ''
+    document.getElementById("supermarket").checked = false;
+    document.getElementById("hospital").checked = false;
+    document.getElementById("pharmacy").checked = false;
+    document.getElementById("doctor").checked = false;
 }
 
 
