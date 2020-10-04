@@ -64,7 +64,7 @@ function onSearch() {
   
   service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, markers);
- 
+  infowindow = new google.maps.InfoWindow();
 
 function markers (results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -88,17 +88,13 @@ function createMarker(s_place) {
         title: s_place.name,
         animation: google.maps.Animation.DROP
     });
-     marker.addListener("click", window)
-     
-function window () {
-    infowindow.setContent(marker.title);  
-    infowindow.setPosition(marker.position) 
-    infowindow.open(map, marker);
-    };
-    
-infowindow = new google.maps.InfoWindow();
-    
-    }
+     marker.addListener("click", function () {
+        
+        infowindow.setContent(s_place.name);  
+        infowindow.setPosition(s_place.geometry.location); 
+        infowindow.open(map, this);
+    })
+}
 
 }
 function updateradius1() {
