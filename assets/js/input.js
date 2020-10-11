@@ -93,15 +93,24 @@ function onSearch() {
     console.log(request4.types);
 
     service = new google.maps.places.PlacesService(map);
-    if (request1.types !== "undefined") {
-    service.nearbySearch(request1, searchmarkers);};
 
-    if (request2.types !== "undefined") {
-    service.nearbySearch(request2, searchmarkers);};
-    if (request3.types !== "undefined") {
-    service.nearbySearch(request3, searchmarkers);};
-    if (request4.types !== "undefined") {
-    service.nearbySearch(request4, searchmarkers);};
+    if (!searchfor[0]) {}
+    else {
+    service.nearbySearch(request1, searchmarkers);
+    };
+
+    if (!searchfor[1]) {}
+        else {
+        service.nearbySearch(request2, searchmarkers);
+        };
+
+    if (!searchfor[2]) {}
+    else {service.nearbySearch(request3, searchmarkers);};
+
+
+    if (!searchfor[3]) {}
+    else {service.nearbySearch(request4, searchmarkers);};
+
     infowindow = new google.maps.InfoWindow();
 
     function searchmarkers (results, status) {
@@ -111,19 +120,20 @@ function onSearch() {
             }
         }
     }
- 
-
 }
 
 
 function createMarker(s_place) {
+       
+console.log(results);
 
-   const image = {
-        url: s_place.icon,
-        
-        scaledSize: new google.maps.Size(25, 25),
-     
+
+const image = {
+    url: s_place.icon,    
+    scaledSize: new google.maps.Size(25, 25),   
    };
+
+    console.log(s_place);   
    smarker = new google.maps.Marker({
        position: s_place.geometry.location,
        map: map,
@@ -131,6 +141,9 @@ function createMarker(s_place) {
        title: s_place.name,
        animation: google.maps.Animation.DROP
    });
+
+
+
     smarker.addListener("click", function () {
 
        infowindow.setContent(s_place.name);  
@@ -142,13 +155,15 @@ function createMarker(s_place) {
 
 
 function onClear() {
-
+    //map.panTo(lat: 47.782, lng: -31.727);
+    map.setZoom(12);
     marker.setMap(null);
     circle.setMap(null);
     for (var m in markers) {
         markers[m].setMap(null);
     }
     markers = [];
+    searchfor = [];
     document.getElementById('autocomplete').value = ''
     document.getElementById("supermarket").checked = false;
     document.getElementById("hospital").checked = false;
