@@ -1,17 +1,16 @@
 <h1 align="center">User Experience (UX)</h1>
 
-
 ## User stories
-    -   #### First Time Visitor Goals
+    - First Time Visitor Goals
         1. As a First Time Visitor, I want to easily understand the main purpose of the site which is to find essential services within a certain area. 
         2. As a First Time Visitor, I want to be able to easily navigate throughout the site to find content.
         3. As a First Time Visitor, I want to quickly search an area and find local amenities.
-    -   #### Returning Visitor Goals
+    - Returning Visitor Goals
         1. As a Returning Visitor, I want to perform different types of searches in different areas. 
-    -   ####  Frequent User Goals
+    - Frequent User Goals
         1. As a Frequent User, I want to find the essential services in the places that matter to them.
 ## Design
-    -   #### Colour Scheme
+    -   Colour Scheme
         1. The two main colours used are grey and white to allow the map in the center to be the main feature.
 ## Typography
 Bootstrap fonts are used throughout the site.
