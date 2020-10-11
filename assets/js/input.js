@@ -1,7 +1,7 @@
 let map;
 let autocomplete;
 let infowindow;
-let newradius = 5000;
+let newradius = 2000;
 let searchfor = [];
 let zoomlevel = 12;
 let service;
@@ -87,11 +87,6 @@ function onSearch() {
         types: [searchfor[3]]
     };
 
-    console.log(request1.types);
-    console.log(request2.types);
-    console.log(request3.types);
-    console.log(request4.types);
-
     service = new google.maps.places.PlacesService(map);
 
     if (!searchfor[0]) {}
@@ -124,9 +119,6 @@ function onSearch() {
 
 
 function createMarker(s_place) {
-       
-console.log(results);
-
 
 const image = {
     url: s_place.icon,    
@@ -141,9 +133,6 @@ const image = {
        title: s_place.name,
        animation: google.maps.Animation.DROP
    });
-
-
-
     smarker.addListener("click", function () {
 
        infowindow.setContent(s_place.name);  
@@ -174,20 +163,20 @@ function onClear() {
 
 function updateradius1() {
 
-    newradius = Number(document.getElementById("fivek").value);
-    zoomlevel = Number(12);
+    newradius = Number(document.getElementById("twok").value);
+    zoomlevel = Number(7);
       console.log(newradius);
 };
 function updateradius2() {
 
-      newradius = Number(document.getElementById("tenk").value);
-      zoomlevel = Number(11);
+      newradius = Number(document.getElementById("fivek").value);
+      zoomlevel = Number(13);
       console.log(newradius);
 };
 
 function updateradius3() {
-      newradius = Number(document.getElementById("fifteenk").value);
-      zoomlevel = Number(10);
+      newradius = Number(document.getElementById("tenk").value);
+      zoomlevel = Number(12);
       console.log(newradius);
 };
 
