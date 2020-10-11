@@ -3,7 +3,7 @@ let autocomplete;
 let infowindow;
 let newradius = 2000;
 let searchfor = [];
-let zoomlevel = 12;
+let zoomlevel = 13;
 let service;
 let markers = [];
 
@@ -159,21 +159,22 @@ function onClear() {
     document.getElementById("doctor").checked = false;
 }
 
+// 
 
 function updateradius1() {
 
     newradius = Number(document.getElementById("twok").value);
-    zoomlevel = Number(7); 
+    zoomlevel = Number(13); 
 };
 function updateradius2() {
 
       newradius = Number(document.getElementById("fivek").value);
-      zoomlevel = Number(13);
+      zoomlevel = Number(12);
 };
 
 function updateradius3() {
       newradius = Number(document.getElementById("tenk").value);
-      zoomlevel = Number(12);
+      zoomlevel = Number(11);
 };
 
 function updatesearch1() {
