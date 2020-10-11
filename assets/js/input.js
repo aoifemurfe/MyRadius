@@ -6,6 +6,9 @@ let searchfor = [];
 let zoomlevel = 13;
 let service;
 let markers = [];
+let circles = [];
+let cmarkers = [];
+
 
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
@@ -30,12 +33,13 @@ function onSearch() {
         
     const cplace = autocomplete.getPlace();
     
-        marker = new google.maps.Marker({
+        var cmarker = new google.maps.Marker({
         position: cplace.geometry.location,
         map: map
         });
+        
 
-        circle = new google.maps.Circle({
+        var circle = new google.maps.Circle({
         strokeColor: "#F03939",
         strokeOpacity: 0.8,
         strokeWeight: 2,
@@ -45,9 +49,17 @@ function onSearch() {
         center: cplace.geometry.location,
         radius: newradius
         });
+        
 
     if (cplace.geometry) {
-        marker.setMap(map);
+        for (var i = 0; i < cmarkers.length; i++) {
+            cmarkers[i].setMap(map);
+            cmarkers.push(cmarker);
+        };
+        for (var i = 0; i < circles.length; i++) {
+            circles[i].setMap(map);
+            circles.push(circle);
+        };
         map.panTo(cplace.geometry.location);
         map.setZoom(zoomlevel);
         
@@ -123,8 +135,7 @@ const image = {
     url: "http://maps.google.com/mapfiles/kml/paddle/blu-blank.png",    
     scaledSize: new google.maps.Size(25, 25),   
    };
-
-    console.log(s_place);   
+ 
    smarker = new google.maps.Marker({
        position: s_place.geometry.location,
        map: map,
@@ -143,13 +154,19 @@ const image = {
 
 
 function onClear() {
-    //map.panTo(lat: 47.782, lng: -31.727);
-    map.setZoom(12);
-    marker.setMap(null);
-    circle.setMap(null);
+  
+    for (var i = 0; i < cmarkers.length; i++) {
+        cmarkers[i].setMap(null);
+    }
+
+    for (var i = 0; i < circles.length; i++) {
+        circles[i].setMap(null);
+    }
+
     for (var m in markers) {
         markers[m].setMap(null);
     }
+
     markers = [];
     searchfor = [];
     document.getElementById('autocomplete').value = ''
