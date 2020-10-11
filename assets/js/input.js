@@ -61,7 +61,6 @@ function onSearch() {
         searchfor.push(el.id)    
     });
 
-    console.log(searchfor);
 
     var request1 = {
         location: cplace.geometry.location,
@@ -121,7 +120,7 @@ function onSearch() {
 function createMarker(s_place) {
 
 const image = {
-    url: s_place.icon,    
+    url: "http://maps.google.com/mapfiles/kml/paddle/blu-blank.png",    
     scaledSize: new google.maps.Size(25, 25),   
    };
 
@@ -164,26 +163,22 @@ function onClear() {
 function updateradius1() {
 
     newradius = Number(document.getElementById("twok").value);
-    zoomlevel = Number(7);
-      console.log(newradius);
+    zoomlevel = Number(7); 
 };
 function updateradius2() {
 
       newradius = Number(document.getElementById("fivek").value);
       zoomlevel = Number(13);
-      console.log(newradius);
 };
 
 function updateradius3() {
       newradius = Number(document.getElementById("tenk").value);
       zoomlevel = Number(12);
-      console.log(newradius);
 };
 
 function updatesearch1() {
     searchitem1 = document.getElementById("inlineCheckbox1").value;
     searchfor.push(searchitem1);
-      console.log(searchfor);
 };
 
 
