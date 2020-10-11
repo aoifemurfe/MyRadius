@@ -1,4 +1,4 @@
-<h1 align="center">User Experience (UX)</h1>
+## User Experience (UX)
 
 ### User stories
    - First Time Visitor Goals
@@ -54,6 +54,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
  - W3C Markup Validator - Results
  - W3C CSS Validator - Results
+ 
 ## Testing User Stories from User Experience (UX) Section
 
 ### First Time Visitor Goals
@@ -76,7 +77,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
     - The user would already be comfortable with the website layout and can easily select the parameters that they wish to search for on the map.
     - Within the map the user can select the icons in the map results and find the names of the services.
 
-## Further Testing
+### Further Testing
 - The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
 - The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
 - A large amount of testing was done to ensure that all pages were linking correctly.
