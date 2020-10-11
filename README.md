@@ -1,16 +1,16 @@
 <h1 align="center">User Experience (UX)</h1>
 
 ## User stories
-    - First Time Visitor Goals
+   - First Time Visitor Goals
         1. As a First Time Visitor, I want to easily understand the main purpose of the site which is to find essential services within a certain area. 
         2. As a First Time Visitor, I want to be able to easily navigate throughout the site to find content.
         3. As a First Time Visitor, I want to quickly search an area and find local amenities.
-    - Returning Visitor Goals
+   - Returning Visitor Goals
         1. As a Returning Visitor, I want to perform different types of searches in different areas. 
-    - Frequent User Goals
+   - Frequent User Goals
         1. As a Frequent User, I want to find the essential services in the places that matter to them.
 ## Design
-    -   Colour Scheme
+   - Colour Scheme
         1. The two main colours used are grey and white to allow the map in the center to be the main feature.
 ## Typography
 Bootstrap fonts are used throughout the site.
@@ -19,7 +19,7 @@ Bootstrap fonts are used throughout the site.
 The site logo was created on canva.com and forms the home button in the top left of the page
 
 ## Wireframes
-Home Page Wireframe - [View] (https://github.com/aoifemurfe/MyRadius/blob/master/assets/images/Wireframe.png)
+Home Page Wireframe - [View](https://github.com/aoifemurfe/MyRadius/blob/master/assets/images/Wireframe.png)
 
 ## Features
  - Responsive on all device sizes
@@ -31,7 +31,7 @@ Home Page Wireframe - [View] (https://github.com/aoifemurfe/MyRadius/blob/master
 
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
--   [Javascript] (https://en.wikipedia.org/wiki/JavaScript)
+-   [Javascript](https://en.wikipedia.org/wiki/JavaScript)
 
 ## Frameworks, Libraries & Programs Used
 1. [Bootstrap 4.4.1:](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
@@ -42,11 +42,11 @@ Home Page Wireframe - [View] (https://github.com/aoifemurfe/MyRadius/blob/master
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 4. [GitHub:](https://github.com/)
     - GitHub is used to store the projects code after being pushed from Git.
-5. [Google Maps  Javascript API] (https://developers.google.com/maps/documentation/javascript/overview):
+5. [Google Maps  Javascript API](https://developers.google.com/maps/documentation/javascript/overview):
     - The google maps API was used to generate the interactive map and search for places. The google maps autocomplete function was used in the search box. 
-6. [Canva:] (https://www.canva.com/)
+6. [Canva:](https://www.canva.com/)
     - Canva was used to create the logo for the website.
-7. [Wireframe  Pro:] (https://wireframepro.mockflow.com)
+7. [Wireframe  Pro:](https://wireframepro.mockflow.com)
 Wireframe Pro was used to create the wireframes during the design process.
 
 ## Testing
@@ -138,7 +138,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 -   [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
 
-- [Google Maps] (https://developers.google.com/maps/documentation/javascript/overview):  Javascript API: The google maps API was used to generate the interactive map and search for places. The google maps autocomplete function was used in the search box. 
+- [Google Maps](https://developers.google.com/maps/documentation/javascript/overview):  Javascript API: The google maps API was used to generate the interactive map and search for places. The google maps autocomplete function was used in the search box. 
 
 ## Content
 All content was written by the developer.
