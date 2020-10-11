@@ -6,8 +6,7 @@ let searchfor = [];
 let zoomlevel = 13;
 let service;
 let markers = [];
-let circles = [];
-let cmarkers = [];
+
 
 
 function initMap() {
@@ -33,13 +32,14 @@ function onSearch() {
         
     const cplace = autocomplete.getPlace();
     
-        var cmarker = new google.maps.Marker({
+        cmarker = new google.maps.Marker({
         position: cplace.geometry.location,
         map: map
         });
+      
         
 
-        var circle = new google.maps.Circle({
+        circle = new google.maps.Circle({
         strokeColor: "#F03939",
         strokeOpacity: 0.8,
         strokeWeight: 2,
@@ -50,18 +50,11 @@ function onSearch() {
         radius: newradius
         });
         
-
     if (cplace.geometry) {
-        for (var i = 0; i < cmarkers.length; i++) {
-            cmarkers[i].setMap(map);
-            cmarkers.push(cmarker);
-        };
-        for (var i = 0; i < circles.length; i++) {
-            circles[i].setMap(map);
-            circles.push(circle);
-        };
+ 
         map.panTo(cplace.geometry.location);
         map.setZoom(zoomlevel);
+  
         
     } else {
         alert("Enter a location");
@@ -154,18 +147,11 @@ const image = {
 
 
 function onClear() {
-  
-    for (var i = 0; i < cmarkers.length; i++) {
-        cmarkers[i].setMap(null);
-    }
-
-    for (var i = 0; i < circles.length; i++) {
-        circles[i].setMap(null);
-    }
+    
 
     for (var m in markers) {
         markers[m].setMap(null);
-    }
+    };
 
     markers = [];
     searchfor = [];
@@ -174,6 +160,8 @@ function onClear() {
     document.getElementById("hospital").checked = false;
     document.getElementById("pharmacy").checked = false;
     document.getElementById("doctor").checked = false;
+    circle.setMap(null);
+    cmarker.setMap(null);
 }
 
 // 
