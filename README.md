@@ -93,7 +93,8 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 - Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
 ### Known Bugs
-Within the console log, there is  an error message of “Cannot read property 'geometry' of undefined” however this does not impact the functionality of the page nor can the user see any issues when looking at the page.
+- Within the console log, there is  an error message of “Cannot read property 'geometry' of undefined” however this does not impact the functionality of the page nor can the user see any issues when looking at the page.
+- The user must press the clear results button to clear results on the map and if they forget the map leaves old results present and adds new results. 
 
 ## GitHub
 
