@@ -9,8 +9,8 @@ let markers = [];
 
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 47.782, lng: -31.727 },
-        zoom: 4
+        center: { lat: 53.2, lng: -7.7 },
+        zoom: 6
     });
     
     autocomplete = new google.maps.places.Autocomplete(
