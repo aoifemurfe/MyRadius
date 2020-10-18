@@ -63,7 +63,7 @@ The lighthouse report at https://web.dev/measure/ was used to assess the website
 3. Best Practise 
 4. SEO
 
- - Lighthouse report - Results(https://github.com/aoifemurfe/MyRadius/blob/master/assets/images/Lighthouse%20Report.pdf)
+ - Lighthouse report - [Results](https://github.com/aoifemurfe/MyRadius/blob/master/assets/images/Lighthouse%20Report.pdf)
  
 ## Testing User Stories from User Experience (UX) Section
 
