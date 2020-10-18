@@ -45,17 +45,15 @@ Home Page Wireframe - [View](https://github.com/aoifemurfe/MyRadius/blob/master/
 ### Frameworks, Libraries & Programs Used
 1. [Bootstrap 4.4.1:](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
     - Bootstrap was used to assist with the responsiveness and styling of the website.
-2. [jQuery:](https://jquery.com/)
-    - jQuery came with Bootstrap to make the navbar responsive but was also used for the smooth scroll function in JavaScript.
-3. [Git](https://git-scm.com/)
+2. [Git](https://git-scm.com/)
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
-4. [GitHub:](https://github.com/)
+3. [GitHub:](https://github.com/)
     - GitHub is used to store the projects code after being pushed from Git.
-5. [Google Maps  Javascript API](https://developers.google.com/maps/documentation/javascript/overview):
+4. [Google Maps  Javascript API](https://developers.google.com/maps/documentation/javascript/overview):
     - The google maps API was used to generate the interactive map and search for places. The google maps autocomplete function was used in the search box. 
-6. [Canva:](https://www.canva.com/)
+5. [Canva:](https://www.canva.com/)
     - Canva was used to create the logo for the website.
-7. [Wireframe  Pro:](https://wireframepro.mockflow.com)
+6. [Wireframe  Pro:](https://wireframepro.mockflow.com)
 Wireframe Pro was used to create the wireframes during the design process.
 
 ### Testing
