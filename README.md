@@ -57,10 +57,13 @@ Home Page Wireframe - [View](https://github.com/aoifemurfe/MyRadius/blob/master/
 Wireframe Pro was used to create the wireframes during the design process.
 
 ### Testing
-The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
+The lighthouse report at https://web.dev/measure/ was used to assess the website based on 4 categories
+1. Performance
+2. Accessability
+3. Best Practise 
+4. SEO
 
- - W3C Markup Validator - Results
- - W3C CSS Validator - Results
+ - Lighthouse report - Results(https://github.com/aoifemurfe/MyRadius/blob/master/assets/images/Lighthouse%20Report.pdf)
  
 ## Testing User Stories from User Experience (UX) Section
 
