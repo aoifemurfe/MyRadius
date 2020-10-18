@@ -1,7 +1,7 @@
 ## Website Details
 
 ### URL
- - The website url is https://aoifemurfe.github.io/MyRadius/
+ - The website url is https://aoifemurfe.github.io/MyEssentialRadius/
  
 ### Purpose
 - The purpose of the website is to allow users to search for essential services in their locatity. This is useful during the pandemic when people are encouraged to stay in their locality and only go out for essential services.
